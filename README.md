@@ -12,7 +12,7 @@ This plugin has been tested to scrape a handful of wineries /wines/ pages withou
 As this plugin leverages composer and has the `/vendor` directory excluded via the gitignore file, it is possible that if you use git-based deployments/builds you will receive some sort of error getting the plugin to deploy. It is recommended that you run `composer update` on deployment and/or add `composer update` as a build-step in your automated deployment process.
 
 ## Installation
-* Clone this repo into your plugins directory, then run `composer update` inside of 
+* Clone this repo into your plugins directory (`git clone git@github.com:Radau/WordPress-Vivino-Reviews-Scraper.git cc-vivino-review-scraper`), then run `composer update` inside of 
 the newly downloaded plugin folder.
 * Activate the plugin via the WordPress plugins menu.
 * Go to `Settings > Vivino Reviews` and fill out your options data.
