@@ -1,0 +1,17 @@
+{
+    "name": "cameron/cc-vivino-review-scraper",
+    "description": "Scrape a Vivino Winery for reviews.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cameron Carranza",
+            "email": "cameron@carranza.io"
+        }
+    ],
+    "require": {
+        "sunra/php-simple-html-dom-parser": "v1.5.0"
+    },
+    "autoload": {
+        "psr-4": {"CCVivinoReviewScraper\\": "includes/"}
+    }
+}
