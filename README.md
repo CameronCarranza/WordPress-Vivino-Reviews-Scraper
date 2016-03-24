@@ -19,7 +19,7 @@ the newly downloaded plugin folder.
 
 ## How does it work?
 #### Cron
-This plugin leverages WP-Cron which allows for a non-blocking way to scrape the data (so your visitors don't end up waiting 20 seconds to load a page). If you deactivate, then reactivate this plugin it will immediately attempt to scrape data with the options you had when it was deactivated.
+This plugin leverages WP-Cron which triggers every hour provided there is a visitor, which allows for a non-blocking way to scrape the data (so your visitors don't end up waiting 20 seconds to load a page). If you deactivate, then reactivate this plugin it will immediately attempt to scrape data with the options you had when it was deactivated.
 
 #### Manually execute the scraping job
 If for any reason you need to re-run the scraping job. Simply go to the options page and click "Save Changes". This will take anywhere from a second to a few minutes depending on how much data it will scrape, so be patient.
