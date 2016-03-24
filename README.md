@@ -34,7 +34,7 @@ If for any reason you need to re-run the scraping job. Simply go to the options 
 This plugin serializes the scraped data into a WP Options field as JSON to maintain relationships. When attempting to access the data, simply use `json_decode(get_option('cc_vivino_review_reviews'))` to get the array of all of your data. From there, it is up to you to sort it out as you see fit. This plugin exists solely to get you the data.
 
 ## Loading into Timber
-Under your `StarterSite extends TimberSite`, have a filter for `timber_context` that points to a method within the class that grabs the options data. The example below will let you access {{ options.cc_vivino_reviews_data }} within Twig templates in Timber. If you want a different name, simply change the context name.
+Under your `StarterSite extends TimberSite`, have a filter for `timber_context` that points to a method within the class that grabs the options data. The example below will let you access `{{ options.cc_vivino_reviews_data }}` within Twig templates in Timber. If you want a different name, simply change the context name.
 ```php
 // Example
 class StarterSite extends TimberSite {
