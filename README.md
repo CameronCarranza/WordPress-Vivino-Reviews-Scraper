@@ -26,3 +26,5 @@ If for any reason you need to re-run the scraping job. Simply go to the options 
 
 ## Usage in templates, WordPress PHP in general.
 This plugin serializes the scraped data into a WP Options field as JSON to maintain relationships. When attempting to access the data, simply use `json_decode(get_option('cc_vivino_review_reviews'))` to get the array of all of your data. From there, it is up to you to sort it out as you see fit. This plugin exists solely to get you the data.
+
+<img src="http://i.imgur.com/4uwaf07.png">
