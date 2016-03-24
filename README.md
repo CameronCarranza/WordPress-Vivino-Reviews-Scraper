@@ -54,3 +54,86 @@ class StarterSite extends TimberSite {
 ```
 
 <img src="http://i.imgur.com/4uwaf07.png">
+
+
+## Examples
+#### Pulling data into Twig Template (General layout applies for vanilla WordPress templates)
+It's assumed you've done the above and loaded your data into Timber Context. In this situation I will have `$context['cc_vivino_reviews_data']`, so I will be calling `{{ cc_vivino_reviews_data }}`.
+
+```php
+{% if cc_vivino_reviews_data %}
+    {% for wine in cc_vivino_reviews_data %}
+        <div class="meta">
+            <!-- Title/Link -->
+            {% if wine.title_url and wine.title %}
+                <h1><a href="{{ wine.title_url }}">{{ wine.title }}</a></h1>
+            {% endif %}
+
+            {% if wine.location_district or wine.location_country %}
+                <!-- Location Data -->
+                <div class="location">
+
+                    <!-- Location District (State) and Link to Vivino page for location -->
+                    {% if wine.location_district_url and wine.location_district %}
+                        <a href="{{ wine.location_district_url }}">{{ wine.location_district }}</a>
+                    {% endif %}
+
+                    <!-- Location Country and Link to Vivino page for Country -->
+                    {% if wine.location_country_url and wine.location_country %}
+                        <a href="{{ wine.location_country_url }}">{{ wine.location_country }}</a>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+
+            {% if wine.rating_average or wine.rating_count %}
+                <!-- Ratings -->
+                <div class="ratingInfo">
+
+                    <!-- Rating Average -->
+                    {% if wine.rating_average %}
+                        <p>Rating Average: {{ wine.rating_average }}</p>
+                    {% endif %}
+
+
+                    <!-- Amount of Ratings -->
+                    {% if wine.rating_count %}
+                        <p>Amount of Ratings: {{ wine.rating_count }}</p>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+
+            {% if wine.reviews %}
+                <!-- Reviews -->
+                <div class="reviews">
+
+                    {% for review in wine.reviews %}
+
+                        <!-- Rating -->
+                        {% if review.rating %}
+                            <p>{{ review.rating }}</p>
+                        {% endif %}
+
+                        <!-- Description -->
+                        {% if review.description %}
+                            <p>{{ review.description }}</p>
+                        {% endif %}
+
+                        <!-- Author -->
+                        {% if review.author %}
+                            <p>{{ review.author }}</p>
+                        {% endif %}
+
+
+                    {% endfor %}
+
+                </div>
+            {% endif %}
+
+
+        </div>
+
+    {% endfor %}
+{% endif %}
+```
