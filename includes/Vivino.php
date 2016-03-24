@@ -131,7 +131,7 @@ class Vivino {
                 $reviews = $this->scrapeReviews( $wineData[$key]['title_url'], $lowestRating, $amountOfReviews );
 
                 if ( !empty($reviews) ) {
-                    $wineData[$key]['reviews'][] = $reviews;
+                    $wineData[$key]['reviews'] = $reviews;
                 }
             }
         }
